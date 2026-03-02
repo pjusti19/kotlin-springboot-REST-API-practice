@@ -87,7 +87,7 @@ class MathController {
 
         return if(isNumeric(number)) number.toDouble() else 0.0
      }
-
+//
     private fun isNumeric(strNumber: String?): Boolean {
 
         if(strNumber.isNullOrBlank()) return false
