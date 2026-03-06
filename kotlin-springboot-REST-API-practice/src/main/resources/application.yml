@@ -1,1 +1,12 @@
-spring.application.name=kotlin-springboot-REST-API-practice
+spring:
+  application:
+    name: kotlin-springboot-REST-API-practice
+  datasource:
+    url: jdbc:postgresql://localhost:5432/rest_with_spring_boot?useTimezone=true&serverTimezone=UTC
+    username: postgres
+    password: Maya19082006!
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
