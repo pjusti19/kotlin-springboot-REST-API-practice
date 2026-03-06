@@ -1,5 +1,7 @@
-package br.com.pedro.kotlin_springboot_REST_API_practice.exceptions
+package br.com.pedro.kotlin_springboot_REST_API_practice.exceptions.handler
 
+import br.com.pedro.kotlin_springboot_REST_API_practice.exceptions.ExceptionResponse
+import br.com.pedro.kotlin_springboot_REST_API_practice.exceptions.ResourceNotFoundException
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ControllerAdvice
@@ -23,14 +25,14 @@ class CustomResponseEntityExceptionHandler : ResponseEntityExceptionHandler() {
         return ResponseEntity<ExceptionResponse>(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR)
     }
 
-    @ExceptionHandler(UnsupportedMathOperationException::class, DivisionByZeroException::class)
-    fun handleBadRequestExceptions(ex: Exception, request: WebRequest): ResponseEntity<ExceptionResponse> {
+    @ExceptionHandler(ResourceNotFoundException::class)
+    fun handleNotFoundExceptions(ex: Exception, request: WebRequest): ResponseEntity<ExceptionResponse> {
         val exceptionResponse = ExceptionResponse(
             Date(),
             ex.message,
             request.getDescription(false)
         )
-        return ResponseEntity<ExceptionResponse>(exceptionResponse, HttpStatus.BAD_REQUEST)
+        return ResponseEntity<ExceptionResponse>(exceptionResponse, HttpStatus.NOT_FOUND)
     }
 
 }

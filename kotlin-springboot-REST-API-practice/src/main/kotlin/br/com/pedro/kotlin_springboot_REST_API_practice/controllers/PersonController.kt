@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.ResponseEntity
 
 @RestController
 @RequestMapping("/person")
@@ -43,7 +44,8 @@ class PersonController {
     }
 
     @DeleteMapping(value = ["/{id}"], produces = [MediaType.APPLICATION_JSON_VALUE])
-    fun delete(@PathVariable(value = "id") id: Long) {
+    fun delete(@PathVariable(value = "id") id: Long) : ResponseEntity<*> {
         service.delete(id)
+        return ResponseEntity.noContent().build<Any>()
     }
 }
