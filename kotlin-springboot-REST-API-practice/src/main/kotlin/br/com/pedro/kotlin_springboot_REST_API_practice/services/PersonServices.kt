@@ -1,7 +1,6 @@
 package br.com.pedro.kotlin_springboot_REST_API_practice.services
 
 import br.com.pedro.kotlin_springboot_REST_API_practice.data.vo.v1.PersonVO
-import br.com.pedro.kotlin_springboot_REST_API_practice.data.vo.v2.PersonVO as PersonVOV2
 import br.com.pedro.kotlin_springboot_REST_API_practice.model.Person
 import br.com.pedro.kotlin_springboot_REST_API_practice.repository.PersonRepository
 import org.slf4j.LoggerFactory
@@ -9,16 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import br.com.pedro.kotlin_springboot_REST_API_practice.exceptions.ResourceNotFoundException
 import br.com.pedro.kotlin_springboot_REST_API_practice.mapper.DozerMapper
-import br.com.pedro.kotlin_springboot_REST_API_practice.mapper.custom.PersonMapper
 
 @Service
 class PersonServices {
 
     @Autowired
     private lateinit var repository: PersonRepository
-
-    @Autowired
-    private lateinit var mapper: PersonMapper
 
     private val logger = LoggerFactory.getLogger(PersonServices::class.java)
 
@@ -39,12 +34,6 @@ class PersonServices {
         logger.info("Creating a new person with name ${person.firstName}!")
         val entity: Person = DozerMapper.parseObject(person, Person::class.java)
         return DozerMapper.parseObject(repository.save(entity), PersonVO::class.java)
-    }
-
-    fun createV2(person: PersonVOV2): PersonVOV2 {
-        logger.info("Creating a new person with name ${person.firstName}!")
-        val entity: Person = mapper.mapVoToEntity(person)
-        return mapper.mapEntityToVo(repository.save(entity))
     }
 
     fun update(person: PersonVO): PersonVO {
