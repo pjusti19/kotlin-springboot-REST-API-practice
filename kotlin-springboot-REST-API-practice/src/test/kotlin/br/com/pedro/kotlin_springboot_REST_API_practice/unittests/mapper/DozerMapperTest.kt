@@ -20,7 +20,7 @@ class DozerMapperTest {
     @Test
     fun parseEntityToVOTest() {
         val output: PersonVO = DozerMapper.parseObject(inputObject!!.mockEntity(), PersonVO::class.java)
-        Assertions.assertEquals(0, output.id)
+        Assertions.assertEquals(0, output.key)
         Assertions.assertEquals("First Name Test0", output.firstName)
         Assertions.assertEquals("Last Name Test0", output.lastName)
         Assertions.assertEquals("Address Test0", output.address)
@@ -34,21 +34,21 @@ class DozerMapperTest {
 
         val outputZero: PersonVO = outputList[0]
 
-        Assertions.assertEquals(0, outputZero.id)
+        Assertions.assertEquals(0, outputZero.key)
         Assertions.assertEquals("First Name Test0", outputZero.firstName)
         Assertions.assertEquals("Last Name Test0", outputZero.lastName)
         Assertions.assertEquals("Address Test0", outputZero.address)
         Assertions.assertEquals("Male", outputZero.gender)
 
         val outputSeven: PersonVO = outputList[7]
-        Assertions.assertEquals(7.toLong(), outputSeven.id)
+        Assertions.assertEquals(7.toLong(), outputSeven.key)
         Assertions.assertEquals("First Name Test7", outputSeven.firstName)
         Assertions.assertEquals("Last Name Test7", outputSeven.lastName)
         Assertions.assertEquals("Address Test7", outputSeven.address)
         Assertions.assertEquals("Female", outputSeven.gender)
 
         val outputTwelve: PersonVO = outputList[12]
-        Assertions.assertEquals(12.toLong(), outputTwelve.id)
+        Assertions.assertEquals(12.toLong(), outputTwelve.key)
         Assertions.assertEquals("First Name Test12", outputTwelve.firstName)
         Assertions.assertEquals("Last Name Test12", outputTwelve.lastName)
         Assertions.assertEquals("Address Test12", outputTwelve.address)
