@@ -1,12 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="rest_with_spring_boot" uuid="120205c4-19c7-4050-8674-56d562c4767a">
+    <data-source source="LOCAL" name="ifood-logistics-driver-regulation-history@pg-logistics-sandbox.intra.logistics-sandbox.dc-ifood.com" uuid="93ac4481-f1fd-4818-b5ef-0c1adbd008dc">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+      <jdbc-url>jdbc:postgresql://pg-logistics-sandbox.intra.logistics-sandbox.dc-ifood.com:5000/ifood-logistics-driver-regulation-history</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
+      <auto-close enable="true" />
+    </data-source>
+    <data-source source="LOCAL" name="ifood-logistics-driver-regulation-action-manager" uuid="fd1e3c88-6239-4f3b-a702-a099c5098847">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://pg-logistics-sandbox.intra.logistics-sandbox.dc-ifood.com:5000/ifood-logistics-driver-regulation-action-manager</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <auto-close enable="true" />
+    </data-source>
+    <data-source source="LOCAL" name="ifood-logistics-driver-risk-vision" uuid="39eebb9f-e453-41e6-ab2f-6a97df1e9e2c">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://pg-logistics-sandbox.intra.logistics-sandbox.dc-ifood.com:5000/ifood-logistics-driver-risk-vision</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <auto-close enable="true" />
+    </data-source>
+    <data-source source="LOCAL" name="ifood-logistics-driver-tagging" uuid="b7e8779c-3f0c-4cb3-80ee-aab48b17422d">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://pg-logistics-sandbox.intra.logistics-sandbox.dc-ifood.com:5000/ifood-logistics-driver-tagging</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <auto-close enable="true" />
+    </data-source>
+    <data-source source="LOCAL" name="logistics-driver-account-health" uuid="81b91067-c5ce-401a-8945-853b1cc6b4d4">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://pg-logistics-sandbox.intra.logistics-sandbox.dc-ifood.com:5001/logistics-driver-account-health</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <auto-close enable="true" />
     </data-source>
   </component>
 </project>
